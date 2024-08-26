@@ -1,0 +1,104 @@
+<mvc:View
+    controllerName="sit.demoapp.demoapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                id="table"
+                inset="false"
+                items="{
+					path: '/items'
+				}"
+            >
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Text text="Line count: "/>
+                            <Text text="{/form/itemsCount}"/>
+                            <Text text="SelectedCity: "/>
+                            <Text text="{/form/selectedCity}"/>
+                            <ToolbarSpacer />
+                            
+                             <Select forceSelection="false" selectedKey="{path:'/form/Zacttype'}" enabled="false" maxWidth="100%" items="{path:'/ActivityTypeList'}" >
+                          <core:ListItem key="{Ilart}" text="{Ilatx}"/>
+                      </Select>
+                      
+                            <Select forceSelection="false"
+                                change="onCityChange"
+                                selectedKey="{/form/selectedCity}"
+                                resetOnMissingKey="true"
+                                items="{/cities}"
+                            >
+                                <items>
+                                    <core:ListItem
+                                        text="{name}"
+                                        key="{id}"
+                                       
+                                    />
+                                </items>
+                            </Select>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="{i18n>OrderId}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="{i18n>Country}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="{i18n>City}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text text="{i18n>Address}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text text="{i18n>Name}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text text="{i18n>Weight}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle" type="Active" press="onItemPressed">
+                        <cells>
+                            <Text text="{OrderID}" />
+                            <Text text="{ShipCountry}" />
+                            <Text text="{ShipCity} {ShipPostalCode}" />
+                            <Text text="{ShipAddress}" />
+                            <Text text="{/ShipName}" />
+                            <Text text="{Freight}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
