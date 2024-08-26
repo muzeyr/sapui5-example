@@ -38,20 +38,3 @@ An SAP Fiori application.
 #### Pre-requisites:
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
-
-
-
-
-
-ok 1. Name data is not shown in the table
-
-non-ok2. Texts from the i18n file are not shown
-
-non-ok 3. Data is not shown in the dropdown
-
-4. When a city is selected from the drop down, please show the country. Data is available in the model.
-
- ok 5. When a line in the table is pressed nothing happens
-
-ok 6. Line count is not visible
- 
